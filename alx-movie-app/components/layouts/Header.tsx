@@ -1,33 +1,28 @@
-import React from 'react';
-import Link from 'next/link';
+import Link from "next/link";
+import Button from "../commons/Button";
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-blue-600 text-white shadow-lg">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold">
-            MovieApp
-          </Link>
-          <nav>
-            <ul className="flex space-x-6">
-              <li>
-                <Link href="/" className="hover:text-blue-200 transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/movies" className="hover:text-blue-200 transition-colors">
-                  Movies
-                </Link>
-              </li>
-              <li>
-                <Link href="/favorites" className="hover:text-blue-200 transition-colors">
-                  Favorites
-                </Link>
-              </li>
-            </ul>
-          </nav>
+    <header className="h-28 flex items-center bg-[#171D22] px-4 md:px-16 lg:px-44 text-white">
+      <div className="flex items-center justify-between w-full">
+        <h2 className="text-xl md:text-4xl font-semibold">
+          Cine<span className="text-[#E2D609]">Seek</span>
+        </h2>
+
+        <nav className="hidden md:flex flex-1 justify-center space-x-8">
+          <Link href="/"          className="hover:text-[#E2D609] px-4 md:px-8 text-xl transition-colors duration-300 font-semibold">Home</Link>
+          <Link href="/movies"   className="hover:text-[#E2D609] px-4 md:px-8 text-xl transition-colors duration-300 font-semibold">Movies</Link>
+          <Link href="/contact"  className="hover:text-[#E2D609] px-4 md:px-8 text-xl transition-colors duration-300 font-semibold">Contact</Link>
+        </nav>
+
+        {/* Mobile “Sign in” */}
+        <div className="flex md:hidden">
+          <Button title="Sign in" />
+        </div>
+
+        {/* Desktop “Sign in” */}
+        <div className="hidden md:flex">
+          <Button title="Sign in" />
         </div>
       </div>
     </header>
